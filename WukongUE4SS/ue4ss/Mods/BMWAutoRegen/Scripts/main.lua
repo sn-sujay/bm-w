@@ -9,14 +9,14 @@
 --Changing CheckInterval number will change the logic to check if any of the regen properties below need to be topped off --
 local VitalityConfig = {
     RegenSettings = {
-        Health = { enabled = true, rate = 5, attribute = 151, maxAttribute = 1 },
-        Mana = { enabled = true, rate = 5, attribute = 152, maxAttribute = 2 },
-        Focus = { enabled = true, rate = 5, attribute = 191, maxAttribute = 39, tolerance = 0.05 },
-        Vessel = { enabled = true, rate = 5, attribute = 201, maxAttribute = 16 },
-        Spirit = { enabled = true, rate = 5, attribute = 202, maxAttribute = 17 },
-        Stamina = { enabled = true, rate = 1, attribute = 158, maxAttribute = 8 }
+        Health = { enabled = true, rate = 50, attribute = 151, maxAttribute = 1 },
+        Mana = { enabled = true, rate = 50, attribute = 152, maxAttribute = 2 },
+        Focus = { enabled = true, rate = 50, attribute = 191, maxAttribute = 39, tolerance = 0.05 },
+        Vessel = { enabled = true, rate = 50, attribute = 201, maxAttribute = 16 },
+        Spirit = { enabled = true, rate = 50, attribute = 202, maxAttribute = 17 },
+        Stamina = { enabled = true, rate = 50, attribute = 158, maxAttribute = 8 }
     },
-    CheckInterval = 2500, -- Checks every 2.5 seconds -- 
+    CheckInterval = 0500, -- Checks every 0.5 seconds -- 
     DebugMode = false
 }
 --------------------Only Edit the section above --------------------
@@ -112,3 +112,4 @@ RegisterHook("/Script/Engine.PlayerController:ClientRestart", function(self, new
     Log(string.format("Player respawn detected: %s", newPawn and newPawn:GetFullName() or "nil"))
     ExecuteWithDelay(6000, VitalityUpdate)
 end)
+
